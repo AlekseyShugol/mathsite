@@ -47,36 +47,36 @@ public class Node {
     private Integer elementPosition;
     public Node(){}
 
-    public Node(String name, String type, Long parentId, String url, String description, Integer elementPosition) {
-        this.name = name;
-        this.type = type;
-        this.parentId = parentId;
-        this.url = url;
-        this.description = description;
-        this.elementPosition = elementPosition;
-    }
-
-    // --- Геттеры и сеттеры ---
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-
-    public String getType() { return type; }
-    public void setType(String type) { this.type = type; }
-
-    public Long getParentId() { return parentId; }
-    public void setParentId(Long parentId) { this.parentId = parentId; }
-
-    public String getUrl() { return url; }
-    public void setUrl(String url) { this.url = url; }
-
-    public String getDescription() { return description; }
-    public void setDescription(String description) { this.description = description; }
-
-    public Integer getElementPosition() { return elementPosition; }
-    public void setElementPosition(Integer elementPosition) { this.elementPosition = elementPosition; }
+//    public Node(String name, String type, Long parentId, String url, String description, Integer elementPosition) {
+//        this.name = name;
+//        this.type = type;
+//        this.parentId = parentId;
+//        this.url = url;
+//        this.description = description;
+//        this.elementPosition = elementPosition;
+//    }
+//
+//    // --- Геттеры и сеттеры ---
+//    public Long getId() { return id; }
+//    public void setId(Long id) { this.id = id; }
+//
+//    public String getName() { return name; }
+//    public void setName(String name) { this.name = name; }
+//
+//    public String getType() { return type; }
+//    public void setType(String type) { this.type = type; }
+//
+//    public Long getParentId() { return parentId; }
+//    public void setParentId(Long parentId) { this.parentId = parentId; }
+//
+//    public String getUrl() { return url; }
+//    public void setUrl(String url) { this.url = url; }
+//
+//    public String getDescription() { return description; }
+//    public void setDescription(String description) { this.description = description; }
+//
+//    public Integer getElementPosition() { return elementPosition; }
+//    public void setElementPosition(Integer elementPosition) { this.elementPosition = elementPosition; }
     
     @Override
     public final boolean equals(Object o) {

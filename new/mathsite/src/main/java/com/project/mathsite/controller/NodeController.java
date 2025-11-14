@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "api/test")
+@RequestMapping(path = "api/v1/")
 @CrossOrigin(origins = "*")
 public class NodeController {
     private final NodeService nodeService;

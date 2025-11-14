@@ -6,11 +6,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class NodeService {
-    public final NodeRepository testRepository;
+    public final NodeRepository nodeRepository;
 
 
     public NodeService(NodeRepository testRepository) {
-        this.testRepository = testRepository;
+        this.nodeRepository = testRepository;
     }
 
 
