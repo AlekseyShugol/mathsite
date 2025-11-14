@@ -1,7 +1,11 @@
-package com.project.mathsite.repository;
+package com.project.mathsite.dao.repository;
 
 import com.project.mathsite.entity.Node;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
+
 public interface NodeRepository extends JpaRepository<Node,Long> {
+    List<Node> findByParentId(Long parentId);
+    Node findFirstByParentIdIsNull();
 }

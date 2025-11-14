@@ -3,6 +3,8 @@ package com.project.mathsite.entity;
 import jakarta.persistence.*;
 import org.hibernate.annotations.Check;
 
+import java.util.Objects;
+
 /**
  * Класс-сущность, представляющая узел (папку, файл или ссылку)
  * в иерархической структуре данных.
@@ -19,6 +21,7 @@ public class Node {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false)
     private Long id;
 
     /** Название узла */
@@ -42,8 +45,7 @@ public class Node {
     /** Порядок отображения */
     @Column(name = "element_position")
     private Integer elementPosition;
-
-    public Node() {}
+    public Node(){}
 
     public Node(String name, String type, Long parentId, String url, String description, Integer elementPosition) {
         this.name = name;
@@ -75,6 +77,19 @@ public class Node {
 
     public Integer getElementPosition() { return elementPosition; }
     public void setElementPosition(Integer elementPosition) { this.elementPosition = elementPosition; }
+    
+    @Override
+    public final boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Node that = (Node) o;
+        return id != null && Objects.equals(id, that.id);
+    }
+
+    @Override
+    public final int hashCode() {
+        return Objects.hash(id);
+    }
 
     @Override
     public String toString() {
