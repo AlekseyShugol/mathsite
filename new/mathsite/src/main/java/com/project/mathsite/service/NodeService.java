@@ -1,18 +1,18 @@
 package com.project.mathsite.service;
 
+import com.project.mathsite.dto.request.NodeRequest;
+import com.project.mathsite.dto.response.NodeResponse;
+import java.util.List;
 
-import com.project.mathsite.dao.repository.NodeRepository;
-import org.springframework.stereotype.Service;
+public interface NodeService {
 
-@Service
-public class NodeService {
-    public final NodeRepository nodeRepository;
+    NodeResponse getNodeById(Long id);
 
+    List<NodeResponse> getAllNodes();
 
-    public NodeService(NodeRepository testRepository) {
-        this.nodeRepository = testRepository;
-    }
+    NodeResponse addNode(NodeRequest nodeRequest);
 
+    NodeResponse updateNode(Long id, NodeRequest nodeRequest);
 
-
+    void deleteNode(Long id);
 }
