@@ -1,11 +1,9 @@
 package com.project.mathsite.controller;
 
-import com.project.mathsite.entity.Node;
-import com.project.mathsite.service.NodeService;
+import com.project.mathsite.dto.response.NodeResponse;
+import com.project.mathsite.service.interfaces.NodeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping(path = "api/v1/")
@@ -17,4 +15,9 @@ public class NodeController {
         this.nodeService = nodeService;
     }
 
+    @GetMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public NodeResponse getNode(@PathVariable Long id){
+        return nodeService.getNodeById(id);
+    }
 }

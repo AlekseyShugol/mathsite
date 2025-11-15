@@ -1,4 +1,4 @@
-package com.project.mathsite.service;
+package com.project.mathsite.service.interfaces;
 
 import com.project.mathsite.dto.request.NodeRequest;
 import com.project.mathsite.dto.response.NodeResponse;
