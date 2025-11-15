@@ -1,6 +1,10 @@
 package com.project.mathsite.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.annotations.Check;
 
 import java.util.Objects;
@@ -13,10 +17,13 @@ import java.util.Objects;
  * если она отсутствует (при включённом spring.jpa.hibernate.ddl-auto=update).
  */
 
-
+@Getter
+@Setter
+@NoArgsConstructor
+@ToString
 @Entity
 @Table(name = "nodes")
-@Check(constraints = "type IN ('FOLDER', 'FILE', 'LINK')") // ← проверка типов на уровне БД
+@Check(constraints = "type IN ('FOLDER', 'FILE', 'LINK')")
 public class Node {
 
     @Id
@@ -45,39 +52,7 @@ public class Node {
     /** Порядок отображения */
     @Column(name = "element_position")
     private Integer elementPosition;
-    public Node(){}
 
-    public Node(String name, String type, Long parentId, String url, String description, Integer elementPosition) {
-        this.name = name;
-        this.type = type;
-        this.parentId = parentId;
-        this.url = url;
-        this.description = description;
-        this.elementPosition = elementPosition;
-    }
-
-    // --- Геттеры и сеттеры ---
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-
-    public String getType() { return type; }
-    public void setType(String type) { this.type = type; }
-
-    public Long getParentId() { return parentId; }
-    public void setParentId(Long parentId) { this.parentId = parentId; }
-
-    public String getUrl() { return url; }
-    public void setUrl(String url) { this.url = url; }
-
-    public String getDescription() { return description; }
-    public void setDescription(String description) { this.description = description; }
-
-    public Integer getElementPosition() { return elementPosition; }
-    public void setElementPosition(Integer elementPosition) { this.elementPosition = elementPosition; }
-    
     @Override
     public final boolean equals(Object o) {
         if (this == o) return true;
@@ -91,16 +66,4 @@ public class Node {
         return Objects.hash(id);
     }
 
-    @Override
-    public String toString() {
-        return "Node{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", type='" + type + '\'' +
-                ", parentId=" + parentId +
-                ", url='" + url + '\'' +
-                ", description='" + description + '\'' +
-                ", elementPosition=" + elementPosition +
-                '}';
-    }
 }
