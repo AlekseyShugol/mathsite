@@ -1,6 +1,9 @@
 package com.project.mathsite.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -35,7 +38,7 @@ public class Node {
     @Column(nullable = false)
     private String name;
 
-    /** Тип: FOLDER / FILE / LINK */
+
     @Column(length = 128, nullable = false)
     private String type;
 

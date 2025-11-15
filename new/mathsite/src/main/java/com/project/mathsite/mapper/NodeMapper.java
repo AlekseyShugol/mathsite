@@ -7,6 +7,7 @@ import org.mapstruct.MappingTarget;
 
 @Mapper(componentModel = "spring")
 public interface NodeMapper {
+
     Node RequestToEntity(NodeRequest request);
 
     NodeRequest EntityToRequest(Node node);
